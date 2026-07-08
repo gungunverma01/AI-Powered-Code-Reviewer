@@ -1,10 +1,133 @@
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html,body {
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #111;
+  font-family: Inter, Arial, sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+main .left,
+main .right {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Left Panel */
+
+main .left {
+  background: #1e1e1e;
+  position: relative;
+}
+
+.left .code {
   height: 100%;
   width: 100%;
+}
+
+.review {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #cfd2ff;
+  color: #000;
+  padding: 10px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.review:hover {
+  background: #b8bcff;
+}
+
+/* Right Panel */
+
+main .right {
+  background: #2b2b2b;
+  color: #e5e5e5;
+  padding: 24px;
+  overflow-y: auto;
+
+  /* Important */
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Markdown */
+
+.right h1,
+.right h2,
+.right h3,
+.right h4,
+.right h5,
+.right h6 {
+  color: white;
+  margin: 18px 0 10px;
+  text-align: left;
+}
+
+.right p {
+  margin: 12px 0;
+  text-align: left;
+}
+
+.right ul,
+.right ol {
+  margin: 12px 0;
+  padding-left: 25px;
+}
+
+.right li {
+  margin: 8px 0;
+}
+
+.right strong {
+  color: #fff;
+}
+
+.right hr {
+  border: none;
+  border-top: 1px solid #555;
+  margin: 20px 0;
+}
+
+.right pre {
+  background: #0d1117;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+.right pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.right code:not(pre code) {
+  background: #444;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
 }

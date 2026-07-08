@@ -1,0 +1,26 @@
+{
+  "name": "ai-powered-code-reviewer",
+  "version": "1.0.0",
+  "description": "An AI-powered code review application that analyzes source code, detects potential issues, suggests improvements, and provides intelligent feedback using Large Language Models (LLMs). The goal of this project is to help developers write cleaner, more efficient, secure, and maintainable code.",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "npm run dev --prefix Frontend",
+    "backend": "npm run dev --prefix Backend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gungunverma01/AI-Powered-Code-Reviewer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gungunverma01/AI-Powered-Code-Reviewer/issues"
+  },
+  "homepage": "https://github.com/gungunverma01/AI-Powered-Code-Reviewer#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
