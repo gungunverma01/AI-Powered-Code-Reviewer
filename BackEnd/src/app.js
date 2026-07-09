@@ -1,20 +1,16 @@
 const express = require("express");
 const aiRoutes = require("./routes/ai.routes");
 const cors = require("cors");
-const path = require("path");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/ai", aiRoutes);
-
-// Serve React build
-app.use(express.static(path.join(__dirname, "../Frontend/dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Frontend/dist/index.html"));
+app.get("/", (req, res) => {
+  res.send("hello world");
 });
+
+app.use("/ai", aiRoutes);
 
 module.exports = app;
