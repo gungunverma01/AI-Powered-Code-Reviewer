@@ -1,22 +1,22 @@
-// module.exports.getReview = async (req, res) => {
-//     console.log("✅ Request reached backend");
-//     console.log(req.body);
-
-//     // rest of your code...
-// }
-
-
 const aiService = require("../services/ai.service");
 
-module.exports.getReview = async (req, res)=>{
+module.exports.getReview = async (req, res) => {
+  try {
+    const { code } = req.body;
 
-    const code = req.body.code;
-    if(!code){
-        return res.status(400).send("prompt is required")
+    if (!code) {
+      return res.status(400).send("Code is required");
     }
 
     const response = await aiService(code);
 
-return res.send(response);
+    return res.send(response);
+  } catch (err) {
+    console.error("❌ Gemini Error:", err);
 
-}
+    return res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+};
